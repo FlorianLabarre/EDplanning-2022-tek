@@ -23,7 +23,6 @@ const MarkerInfo = (props: schoolProps): JSX.Element => {
                     Tsunami: {props.Shelter_tsunami ? 'yes' : 'no'}
                     <br />
                     Volcano: {props.Shelter_volcano ? 'yes' : 'no'}
-                    <br />
             </Popup>
         </Marker>
     );
