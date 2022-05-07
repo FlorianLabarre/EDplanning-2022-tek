@@ -1,6 +1,8 @@
 import React, { useCallback, useState } from "react";
 import styled from "styled-components";
+import Sidebar from "./components/sidebar/Sidebar";
 import Topbar from "./components/topbar/Topbar";
+import "./index.css"
 
 interface DashboardProps {
 
@@ -8,7 +10,13 @@ interface DashboardProps {
 
 const Dashboard = ({ }: DashboardProps): JSX.Element => {
     return (
-        <div className="Dashboard"><Topbar></Topbar></div>
+        <div>
+            <Topbar/>
+            <div className="container">
+                <Sidebar/>
+                <div className="others"></div>
+            </div>
+        </div>
     );
 };
 

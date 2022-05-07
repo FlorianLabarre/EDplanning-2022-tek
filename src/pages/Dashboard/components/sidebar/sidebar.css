@@ -1,0 +1,7 @@
+.sidebar {
+    flex: 1;
+    height: calc(100vh - 50px); 
+    background-color: rgb(71, 68, 64);
+    padding-left: 20px;
+    color: white;
+}

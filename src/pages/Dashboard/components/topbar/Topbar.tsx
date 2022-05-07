@@ -24,7 +24,6 @@ export default function Topbar() {
                     </div>
                     <div className="topbarIconContainer">
                         <Settings />
-                        <span className="topIconBadge"></span>
                     </div>
                     <img src="https://avatars.githubusercontent.com/u/72006360?v=4" alt="" className="topAvatar" />
                 </div>

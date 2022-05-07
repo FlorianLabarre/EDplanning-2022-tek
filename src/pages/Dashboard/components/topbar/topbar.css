@@ -3,6 +3,10 @@
     height: 50%;
     background-color: white;
     margin-top: 10px;
+    margin-bottom: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
 }
 
 .topbarWrapper {
@@ -16,11 +20,12 @@
 .logo {
     font-weight: bold;
     font-size: 30px;
-    color: darkblue;
+    color: black;
     cursor: pointer
 }
 
 .topRight {
+    margin-top: 10px;
     display: flex;
     align-items: center;
 }
