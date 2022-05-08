@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { MapContainer, TileLayer, useMap } from 'react-leaflet'
+import { MapContainer, TileLayer } from 'react-leaflet'
 import MarkerInfo from "./MarkerInfo";
 import { schoolData } from '../../data';
 import { Autocomplete, TextField } from '@mui/material';
 
 const Map = (): JSX.Element => {
     const [data, setData] = useState(schoolData);
+    const [searchValue, setSearchValue] = useState("");
 
     const updateData = (value: string | null) => {
         if (value == null)
@@ -17,15 +18,27 @@ const Map = (): JSX.Element => {
         }
     }
 
+    useEffect(() => {
+        updateData(searchValue);
+    }, [searchValue])
+
     return (
         <div>
             <Autocomplete
                 id="searchBar"
                 options={schoolData.map((option) => option.name)}
-                renderInput={(params) => <TextField {...params} label="Search" onChange={(e) => updateData(e.target.value)} />}
+                renderInput={(params) =>
+                    <TextField
+                        {...params}
+                        label="Search"
+                        onChange={(e) => setSearchValue(e.target.value)}
+                        value={searchValue}
+                    />
+                }
                 onChange={(event: any, newValue: string | null) => {
-                    updateData(newValue);
+                    setSearchValue(newValue);
                 }}
+                value={searchValue}
             />
             <MapContainer
                 center={[schoolData[0].latitude, schoolData[0].longitude]}
