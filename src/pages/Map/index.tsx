@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { MapContainer, TileLayer, useMap } from 'react-leaflet'
+import { MapContainer, TileLayer } from 'react-leaflet'
 import MarkerInfo from "./MarkerInfo";
 import { schoolData } from '../../data';
 import { Autocomplete, TextField } from '@mui/material';
@@ -36,7 +36,7 @@ const Map = (): JSX.Element => {
                     />
                 }
                 onChange={(event: any, newValue: string | null) => {
-                    updateData(newValue);
+                    setSearchValue(newValue);
                 }}
                 value={searchValue}
             />
@@ -44,7 +44,7 @@ const Map = (): JSX.Element => {
                 center={[schoolData[0].latitude, schoolData[0].longitude]}
                 zoom={13}
                 scrollWheelZoom={true}
-                style={{ height: '94vh', width: '100vw' }}>
+                style={{ height: '94vh', width: '100%' }}>
                 <TileLayer
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
