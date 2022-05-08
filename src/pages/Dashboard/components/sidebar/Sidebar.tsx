@@ -3,44 +3,44 @@ import "./sidebar.css"
 import {
   LineStyle,
   Timeline,
-  TrendingUp
+  Contacts,
+  LocationSearching
 } from '@mui/icons-material';
 
-export default function Sidebar() {
+interface SidebarProps {
+  setOnMap?: any,
+  setOnHome?: any,
+  setOnAnalytics?: any
+}
+
+const Sidebar = ({ setOnMap, setOnHome, setOnAnalytics }: SidebarProps): JSX.Element => {
+  const reset = () => {
+    setOnMap(false);
+    setOnHome(false);
+    setOnAnalytics(false);
+  };
+
   return (
     <div className='sidebar'>
       <div className='sidebarWrapper'>
         <div className="sidebarMenu">
           <h3 className="sidebarTitle">Quick menu</h3>
           <ul className='sideBarList'>
-            <li className="sidebarListItem active">
+            <li className="sidebarListItem active" onClick={() => {reset(); setOnHome(true)}}>
               <LineStyle className='sidebarIcon' />
               Home
             </li>
-            <li className="sidebarListItem">
+            <li className="sidebarListItem" onClick={() => {reset(); setOnAnalytics(true)}}>
               <Timeline className='sidebarIcon' />
               Analytics
             </li>
-            <li className="sidebarListItem">
-              <TrendingUp className='sidebarIcon' />
-              Sales
+            <li className="sidebarListItem" onClick={() => {reset(); setOnMap(true)}}>
+              <LocationSearching className='sidebarIcon' />
+              Search
             </li>
-          </ul>
-        </div>
-        <div className="sidebarMenu">
-          <h3 className="sidebarTitle">Statistic</h3>
-          <ul className='sideBarList'>
-            <li className="sidebarListItem active">
-              <LineStyle className='sidebarIcon' />
-              Home
-            </li>
-            <li className="sidebarListItem">
-              <Timeline className='sidebarIcon' />
-              Analytics
-            </li>
-            <li className="sidebarListItem">
-              <TrendingUp className='sidebarIcon' />
-              Sales
+            <li className="sidebarListItem" onClick={() => {reset(); setOnHome(true)}}>
+              <Contacts className='sidebarIcon' />
+              Contact
             </li>
           </ul>
         </div>
@@ -48,3 +48,5 @@ export default function Sidebar() {
     </div>
   )
 }
+
+export default Sidebar;

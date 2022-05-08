@@ -31,7 +31,7 @@ const Map = (): JSX.Element => {
                 center={[schoolData[0].latitude, schoolData[0].longitude]}
                 zoom={13}
                 scrollWheelZoom={true}
-                style={{ height: '94vh', width: '100wh' }}>
+                style={{ height: '94vh', width: '100%' }}>
                 <TileLayer
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

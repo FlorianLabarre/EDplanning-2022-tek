@@ -20,6 +20,10 @@
     color: rgb(197, 192, 186);
 }
 
+ul{
+    padding: 15px;
+}
+
 .sidebarList {
     list-style: none;
     padding: 5px;
